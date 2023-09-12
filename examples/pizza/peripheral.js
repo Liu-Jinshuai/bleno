@@ -46,6 +46,42 @@ bleno.on('stateChange', function(state) {
   }
 });
 
+bleno.on('accept', function(clientAddress) {
+  console.log('Accepted connection from address: ' + clientAddress);
+});
+
+bleno.on('disconnect', function(clientAddress) {
+  console.log('Disconnected from address: ' + clientAddress);
+});
+
+bleno.on('rssiUpdate', function(rssi) {
+  console.log('RSSI updated: ' + rssi);
+});
+
+bleno.on('servicesSet', function() {
+  console.log('Services are now set');
+});
+
+bleno.on('servicesSetError', function(error) {
+  console.log('Error setting services: ' + error);
+});
+
+bleno.on('advertisingStartError', function(error) {
+  console.log('Error starting advertising: ' + error);
+});
+
+bleno.on('advertisingStop', function() {
+  console.log('Advertising stopped');
+});
+
+bleno.on('advertisingStart', function(error) {
+  console.log('Advertising started');
+});
+
+bleno.on('accept', function(clientAddress) {
+  console.log('Accepted connection from address: ' + clientAddress);
+});
+
 bleno.on('advertisingStart', function(err) {
   if (!err) {
     console.log('advertising...');

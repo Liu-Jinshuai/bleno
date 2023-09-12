@@ -1,6 +1,32 @@
-# bleno
+# bleno2
 
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sandeepmistry/bleno?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+**This is a fork of bleno. Since bleno has not been updated for a long time, some bugs and issues have not been updated. This branch will inherit its spirit and continue to improve it. Thank you for your understanding and support.**
+
+You can view an example of **[ble peripheral service](https://github.com/Liu-Jinshuai/bleno/tree/master/examples/pizza)** here.
+
+Before running：
+
+```sh
+
+sudo apt-get update
+sudo apt-get upgrade
+sudo systemctl enable bluetooth
+sudo systemctl start bluetooth
+
+```
+
+```sh
+npm install bleno2
+sudo node node_modules/bleno2/examples/pizza/peripheral.js
+```
+
+success !!!
+
+-------
+
+### bleno document
+
+[original bleno](https://github.com/noble/bleno)
 
 
 A Node.js module for implementing BLE (Bluetooth Low Energy) peripherals.
@@ -80,16 +106,16 @@ Make sure you have read and write permissions on the ```/dev/usb/*``` device tha
 ## Install
 
 ```sh
-npm install bleno
+npm install bleno2
 ```
 
 ## Usage
 
 ```javascript
-var bleno = require('bleno');
+var bleno = require('bleno2');
 ```
 
-See [examples folder](https://github.com/sandeepmistry/bleno/blob/master/examples) for code examples.
+See [examples folder](https://github.com/Liu-Jinshuai/bleno/blob/master/examples) for code examples.
 
 ### Actions
 
@@ -404,4 +430,3 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-[![Analytics](https://ga-beacon.appspot.com/UA-56089547-1/sandeepmistry/bleno?pixel)](https://github.com/igrigorik/ga-beacon)
