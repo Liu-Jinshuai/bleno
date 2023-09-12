@@ -20,7 +20,7 @@ npm install bleno2
 sudo node node_modules/bleno2/examples/pizza/peripheral.js
 ```
 
-success !!!
+**success !!!**
 
 -------
 
