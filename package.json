@@ -1,6 +1,6 @@
 {
   "name": "bleno2",
-  "version": "0.6.5",
+  "version": "0.6.6",
   "description": "A Node.js module for implementing BLE (Bluetooth Low Energy) peripherals",
   "main": "index.js",
   "engines": {
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sandeepmistry/bleno"
+    "url": "https://github.com/Liu-Jinshuai/bleno2"
   },
   "keywords": [
     "BLE",
@@ -44,7 +44,7 @@
     "debug": "^2.2.0"
   },
   "optionalDependencies": {
-    "@modum-io/bluetooth-hci-socket": "^0.6.1",
+    "bluetooth-hci-socket2": "^0.6.8",
     "bplist-parser": "0.0.6",
     "xpc-connection": "~0.1.4"
   }

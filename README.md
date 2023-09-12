@@ -22,6 +22,10 @@ sudo node node_modules/bleno2/examples/pizza/peripheral.js
 
 **success !!!**
 
+**bluetooth-hci-socket repaired version:**
+
+ - [bluetooth-hci-socket2](github.com/Liu-Jinshuai/node-bluetooth-hci-socket2)
+
 -------
 
 ### bleno document
