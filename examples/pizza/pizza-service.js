@@ -1,5 +1,6 @@
 var util = require('util');
 var bleno = require('../..');
+let notifyCallback = null;
 
 var PizzaCrustCharacteristic = require('./pizza-crust-characteristic');
 var PizzaToppingsCharacteristic = require('./pizza-toppings-characteristic');
@@ -14,15 +15,27 @@ function PizzaService(pizza) {
             // new PizzaBakeCharacteristic(pizza)
             new bleno.Characteristic({
                 uuid: '13333333333333333333333333330001',
-                properties: ['write'], // 只配置写属性
+                properties: ['notify','write'], // 'read', 'write', 'writeWithoutResponse', 'notify', 'indicate'各代表什么意思
                 onWriteRequest: (data, offset, withoutResponse, callback) => {
-                  const receivedValue = data.toString('utf-8'); // 将接收到的数据转为字符串
+                  const receivedValue = data.toString('utf-8'); // convert received data to string
+                  
+                  // do something with received data here...
+                  if (notifyCallback) {
+                    const resultData = Buffer.from('Your operation result', 'utf8');
+                    notifyCallback(resultData);
+                  }
+                  
                   console.log('Received value:', receivedValue);
-          
-                  // 这里可以对接收到的值进行处理
-          
-                  callback(bleno.Characteristic.RESULT_SUCCESS); // 返回成功状态
+                  callback(this.RESULT_SUCCESS); // return result status
                 },
+                onSubscribe: (maxValueSize, updateValueCallback) => {
+                  console.log('Client subscribed');
+                  notifyCallback = updateValueCallback;
+                },
+                onUnsubscribe: () => {
+                  console.log('Client unsubscribed');
+                  notifyCallback = null;
+                }
               }),
         ]
     });
